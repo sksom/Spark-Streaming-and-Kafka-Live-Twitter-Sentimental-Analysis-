@@ -1,0 +1,20 @@
+To run the program please follow the steps exactly as stated below:
+Step 1: In the terminal Go to the directory where your kafka resides and after that Run Zookeeper server by executing the following command in the terminal:
+
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+Step2: While in the same directory, run the kafka server by executing the following command in the terminal:
+
+bin/kafka-server-start.sh config/server.properties
+
+Step3: While in the same directory, create a kafka topic by executing the following command in the terminal:
+
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic twitterstream
+
+Pre-setup is complete, keep the above programs running in the terminal
+
+Step4: Now open the folder "python_consumer" as a project in pycharm and right click on the file "twitter_streaming.py" and select 'run twitter_streaming'
+
+Now our consumer is consuming the tweets from the live stream from the twitter API
+
+Step5: Now open the folder "scala_analyser" as a project in IntelliJ Idea and right click on the file "TwitterStream.scala" and select 'run TwitterStream' and see the analyzed live tweets on the go in the console of IntelliJ Idea directly.
